@@ -2,7 +2,7 @@ FROM node:14
 
 WORKDIR /app
 
-RUN git clone https://github.com/djtoler/finalKube.git .
+RUN git clone -b green-useast2 https://github.com/djtoler/finalKube.git .
 
 WORKDIR /app/react
 
