@@ -5,16 +5,7 @@ pipeline {
     }
     
     stages {
-        stage('SetHost') {
-            steps {
-                sh '''#!/bin/bash
-                pwd
-                pwd
-                '''
-            }
-        }
-        
-        stage('BuildFrontImage') {
+        stage('Clean') {
             agent { label 'DockerAgent' } 
             steps {
               dir('docker') {
@@ -24,12 +15,22 @@ pipeline {
                 df -h /tmp
                 docker image ls
                 docker ps
-                docker rmi djtoler/frontkube1:latest || true
-                docker rmi djtoler/backkube1:latest || true
+                docker rmi djtoler/fp-fe-green-useast2:latest || true
+                docker rmi djtoler/fp-be-green-useast2:latest || true
                 docker images -f "dangling=true" -q | xargs docker rmi
                 echo "FINISHED REMOVING IMAGES" 
+              '''
+              }
+            }
+        }
+
+        stage('BuildFrontImage') {
+            agent { label 'DockerAgent' } 
+            steps {
+              dir('docker') {
+                sh '''#!/bin/bash
                 echo "START FRONTEND BUILD" 
-                cd front && pwd && docker build --no-cache -t djtoler/frontkube1 .
+                cd front && pwd && docker build --no-cache -t djtoler/fp-fe-green-useast2 .
                 echo "FINISHED BUILDING FRONTEND"
               '''
               }
@@ -43,7 +44,7 @@ pipeline {
                 sh '''#!/bin/bash
                 pwd
                 echo "STARTING BACKEND BUILD" 
-                cd back && pwd && docker build --no-cache -t djtoler/backkube1 .
+                cd back && pwd && docker build --no-cache -t djtoler/fp-be-green-useast2 .
                 echo "FINISHED BUILDING BACKEND"
               '''
               }
@@ -62,8 +63,8 @@ pipeline {
             steps {
                 sh 'echo "PUSHING TO DOCKERHUB1" '
                 sh 'docker image ls'
-                sh 'sudo docker push djtoler/frontkube1:latest'
-                sh 'sudo docker push djtoler/backkube1:latest'
+                sh 'sudo docker push djtoler/fp-fe-green-useast2:latest'
+                sh 'sudo docker push djtoler/fp-be-green-useast2:latest'
             }
         }
 
@@ -76,15 +77,15 @@ pipeline {
         //     }
         // }
 
-        stage('KubernetesRedeployPods') {
-            agent { label 'KubernetesAgent' } 
-            steps {
-              dir('kubernetes') {
-                sh '''#!/bin/bash
-                ./redeploy-pods.sh
-              '''
-              }
-            }
-        }
+        // stage('KubernetesRedeployPods') {
+        //     agent { label 'KubernetesAgent' } 
+        //     steps {
+        //       dir('kubernetes') {
+        //         sh '''#!/bin/bash
+        //         ./redeploy-pods.sh
+        //       '''
+        //       }
+        //     }
+        // }
     }
 }

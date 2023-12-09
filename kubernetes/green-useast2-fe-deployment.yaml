@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: fpjfe
-        image: djtoler/frontkube1:latest
+        image: djtoler/fp-fe-green-useast2:latest
         ports:
         - containerPort: 3000

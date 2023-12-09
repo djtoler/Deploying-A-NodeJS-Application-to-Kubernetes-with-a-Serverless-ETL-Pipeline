@@ -16,7 +16,7 @@ spec:
         role: backend
       containers:
       - name: fpjbe
-        image: djtoler/backkube1:latest
+        image: djtoler/fp-be-green-useast2:latest
         ports:
         - containerPort: 8000
 
