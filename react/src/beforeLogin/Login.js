@@ -40,7 +40,7 @@ const Login = () => {
         <img src="images/logo.png" alt="" />
         <h1>Quiz Network</h1>
         <h2>Welcome Back</h2>
-        <h5>[Green Deployment6]</h5>
+        <h5>[Green Deployment Working1]</h5>
         <p>Please enter your details</p>
         <div className={styles.inputBox}>
           <span>Username</span>

@@ -15,5 +15,6 @@ spec:
       containers:
       - name: fpjfe
         image: djtoler/fp-fe-green-useast2
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
