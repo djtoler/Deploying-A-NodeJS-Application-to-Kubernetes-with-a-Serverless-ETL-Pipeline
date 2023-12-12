@@ -10,3 +10,4 @@ kubectl apply -f green-useast2-fe-deployment.yaml
 
 #To be done later
 # kubectl apply -f redis-deployment.yaml 
+
