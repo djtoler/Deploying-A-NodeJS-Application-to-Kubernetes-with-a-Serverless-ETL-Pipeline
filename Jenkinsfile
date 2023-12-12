@@ -77,15 +77,15 @@ pipeline {
         //     }
         // }
 
-        // stage('KubernetesRedeployPods') {
-        //     agent { label 'KubernetesAgent' } 
-        //     steps {
-        //       dir('kubernetes') {
-        //         sh '''#!/bin/bash
-        //         ./redeploy-pods.sh
-        //       '''
-        //       }
-        //     }
-        // }
+        stage('KubernetesRedeployPods') {
+            agent { label 'KubernetesAgent' } 
+            steps {
+              dir('kubernetes') {
+                sh '''#!/bin/bash
+                ./redeploy-pods.sh
+              '''
+              }
+            }
+        }
     }
 }

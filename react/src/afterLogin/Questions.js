@@ -184,7 +184,7 @@ const Questions = () => {
       <div className={updateModel ? `${qstyle.modal}` : `${qstyle.hide}`}>
         <div className={qstyle.modalBox}>
           <div className={qstyle.modalHead}>
-            <div>Update Question</div>
+            <div>Update Question</div>quiz.lin
             <div
               onClick={() => {
                 setUpdateModel(false);

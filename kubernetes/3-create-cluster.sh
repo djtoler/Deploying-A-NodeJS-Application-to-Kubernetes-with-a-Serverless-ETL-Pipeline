@@ -1,5 +1,7 @@
 #!/bin/bash
 
+aws configure set region us-east-2
+
 # Inputs for Kubernetes commands
 #######################################################################################################################
 CLUSTER_NAME="$1"
@@ -24,16 +26,21 @@ eksctl utils associate-iam-oidc-provider --cluster "$CLUSTER_NAME" --approve
 
 # Apply deployment files for making pods & service files for routing to pods
 ##########################################################################################################################
-./blue-useast1-apply-yamls.sh
+./green-useast2-apply-yamls.sh
 
 # Download & create IAM policy for EKS Loadbalancer if it doesn't already exist
 ##########################################################################################################################
-# wget https://raw.githubusercontent.com/kura-labs-org/Template/main/iam_policy.json
-# aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
+wget https://raw.githubusercontent.com/kura-labs-org/Template/main/iam_policy.json
+aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
+
+echo "start creating service acct"
 
 # Create service account & certificate manager
 ##########################################################################################################################
-eksctl create iamserviceaccount --cluster="$CLUSTER_NAME" --namespace=kube-system --name=aws-load-balancer-controller --attach-policy-arn=arn:aws:iam::994181039877:policy/AWSLoadBalancerControllerIAMPolicy --approve
+eksctl create iamserviceaccount --cluster="$CLUSTER_NAME" --namespace=kube-system --name=aws-load-balancer-controller --attach-policy-arn=arn:aws:iam::876764840442:policy/AWSLoadBalancerControllerIAMPolicy --override-existing-serviceaccounts --approve 
+
+echo "start applying cert manager "
+
 kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.5.4/cert-manager.yaml
 
 # Download configurations for the ingress controller & load balancer controller & give resources time to create
@@ -47,6 +54,8 @@ sleep 10s
 
 # Apply ingress-class, ingress & give resources time to create
 ##########################################################################################################################
-kubectl apply -f ingress_class.yaml
+kubectl apply -f green-useast2-ingress_class.yaml
 sleep 20s
-kubectl apply -f ingress.yaml
+kubectl apply -f green-useast2-ingress.yaml
+
+aws configure set region us-east-1

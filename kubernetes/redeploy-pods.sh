@@ -1,11 +1,12 @@
 #!/bin/bash
 
-cd /home/ubuntu/final-kube/kubernetes
+cd /home/ubuntu/final-project/v2/g_useast2_finalKube/finalKube/kubernetes
 
-kubectl delete -f fe-deployment.yaml
+kubectl delete -f green-useast2-fe-deployment.yaml
 
-sleep 30s
+sleep 15s
 
-kubectl apply -f be-deployment.yaml 
-kubectl apply -f fe-deployment.yaml 
-kubectl apply -f redis-deployment.yaml 
+kubectl apply -f green-useast2-fe-deployment.yaml
+
+#To be done later
+# kubectl apply -f redis-deployment.yaml 
