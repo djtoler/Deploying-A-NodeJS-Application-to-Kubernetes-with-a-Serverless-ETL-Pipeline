@@ -63,8 +63,8 @@ pipeline {
             steps {
                 sh 'echo "PUSHING TO DOCKERHUB1" '
                 sh 'docker image ls'
-                sh 'sudo docker push djtoler/fp-fe-green-useast2:latest'
-                sh 'sudo docker push djtoler/fp-be-green-useast2:latest'
+                sh 'sudo docker push djtoler/fp-fe-green-useast2'
+                sh 'sudo docker push djtoler/fp-be-green-useast2'
             }
         }
 
