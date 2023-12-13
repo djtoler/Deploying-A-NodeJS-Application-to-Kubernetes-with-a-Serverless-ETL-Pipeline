@@ -31,7 +31,7 @@ eksctl utils associate-iam-oidc-provider --cluster "$CLUSTER_NAME" --approve
 # Download & create IAM policy for EKS Loadbalancer if it doesn't already exist
 ##########################################################################################################################
 wget https://raw.githubusercontent.com/kura-labs-org/Template/main/iam_policy.json
-aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
+# aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
 
 echo "start creating service acct"
 
