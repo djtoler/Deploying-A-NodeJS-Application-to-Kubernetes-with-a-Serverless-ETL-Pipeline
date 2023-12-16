@@ -38,9 +38,8 @@ const Login = () => {
     <div className={styles.outerBox}>
       <div className={styles.formBox}>
         <img src="images/logo.png" alt="" />
-        <h1>Quiz Network</h1>
-        <h2>Welcome Back</h2>
-        <h5>[Green Deployment Have More Mercy]</h5>
+        <h2>Quiz Network</h2>
+        <h1>[US-EAST-2 OHIO]</h1>
         <p>Please enter your details</p>
         <div className={styles.inputBox}>
           <span>Username</span>
