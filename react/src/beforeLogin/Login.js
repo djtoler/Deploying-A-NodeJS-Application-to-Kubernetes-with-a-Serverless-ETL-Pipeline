@@ -39,7 +39,7 @@ const Login = () => {
       <div className={styles.formBox}>
         <img src="images/logo.png" alt="" />
         <h2>Quiz Network</h2>
-        <h1>[US-EAST-2 Kura Labs We Did I!!!]</h1>
+        <h1>[US-EAST-2 Kura Labs We Did I!!!!!]</h1>
         <p>Please enter your details</p>
         <div className={styles.inputBox}>
           <span>Username</span>
