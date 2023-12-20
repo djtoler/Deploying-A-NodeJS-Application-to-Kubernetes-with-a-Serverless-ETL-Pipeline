@@ -1,0 +1,34 @@
+docker image ls
+docker login
+
+######################################################
+#Build, tag & push frontend(Blue Deployment, US East 1)
+########################################################
+cd /home/ubuntu/final-project/v2/b_useast1_finalKube/finalKube/docker/back
+docker build -t fp-be-blue-useast1 .
+docker tag fp-be-blue-useast1 djtoler/fp-be-blue-useast1:v1
+docker push djtoler/fp-be-blue-useast1:v1
+
+#######################################################
+#Build, tag & push backend(Blue Deployment, US East 1)
+########################################################
+cd /home/ubuntu/final-project/v2/b_useast1_finalKube/finalKube/docker/front
+docker build -t fp-fe-blue-useast1 .
+docker tag fp-fe-blue-useast1 djtoler/fp-fe-blue-useast1:latest
+docker push djtoler/fp-fe-blue-useast1:latest
+
+#######################################################
+#Build, tag & push frontend(Green Deployment, US East 2)
+########################################################
+cd /home/ubuntu/final-project/v2/g_useast2_finalKube/finalKube/docker/front
+docker build -t fp-fe-green-useast2 .
+docker tag fp-fe-green-useast2 djtoler/fp-fe-green-useast2:latest
+docker push djtoler/fp-fe-green-useast2:latest
+
+#######################################################
+#Build, tag & push backendend(Green Deployment, US East 2)
+########################################################
+cd /home/ubuntu/final-project/v2/g_useast2_finalKube/finalKube/docker/back
+docker build -t fp-be-green-useast2 .
+docker tag fp-be-green-useast2 djtoler/fp-be-green-useast2:latest
+docker push djtoler/fp-be-green-useast2:latest

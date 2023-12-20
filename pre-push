@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Path to the branch.txt file
+# BRANCH_FILE="branch.txt"
+
+# # Get the current branch name
+# current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+# # Read the allowed branch name from branch.txt
+# if [ -f "$BRANCH_FILE" ]; then
+#     allowed_branch=$(cat "$BRANCH_FILE")
+# else
+#     echo "Error: $BRANCH_FILE does not exist."
+#     exit 1
+# fi
+
+# # Compare the current branch with the allowed branch
+# if [ "$current_branch" = "$allowed_branch" ]; then
+#     echo "Branches match, pushing to $current_branch"
+#     exit 0  
+# else
+#     echo "You are on branch $current_branch."
+#     echo "Only pushes to $allowed_branch are allowed according to $BRANCH_FILE."
+#     echo "Push aborted."
+#     exit 1  # Branches do not match, abort the push
+# fi
