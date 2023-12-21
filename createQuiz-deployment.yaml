@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-createQuiz
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-createQuiz-app
+  template:
+    metadata:
+      labels:
+        app: ms-createQuiz-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-createQuiz-app
+        image: djtoler/qz-ms-createQuiz:latest
+        ports:
+        - containerPort: 8005
