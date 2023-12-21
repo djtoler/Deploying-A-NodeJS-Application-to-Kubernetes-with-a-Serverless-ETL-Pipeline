@@ -23,7 +23,7 @@ for dir in microservices/*/ ; do
     git commit -m "Modified files in $dir_name"
 
     # Push to the corresponding remote branch
-    git push origin "$dir_name"
+    git push --force origin "$dir_name"
 
     # Return to the initial branch
     git checkout -
