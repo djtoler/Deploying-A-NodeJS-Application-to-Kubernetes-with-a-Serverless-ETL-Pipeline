@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-getAttemptQuizes
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-getAttemptQuizes-app
+  template:
+    metadata:
+      labels:
+        app: ms-getAttemptQuizes-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-getAttemptQuizes-app
+        image: djtoler/qz-ms-getAttemptQuizes:latest
+        ports:
+        - containerPort: 8006
