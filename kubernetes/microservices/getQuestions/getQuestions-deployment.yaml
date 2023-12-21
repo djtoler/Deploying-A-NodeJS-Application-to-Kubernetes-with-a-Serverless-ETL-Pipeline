@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-getQuestions
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-getQuestions-app
+  template:
+    metadata:
+      labels:
+        app: ms-getQuestions-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-getQuestions-app
+        image: djtoler/qz-ms-getQuestions:latest
+        ports:
+        - containerPort: 8009

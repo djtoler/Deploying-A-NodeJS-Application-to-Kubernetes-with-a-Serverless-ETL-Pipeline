@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-signup
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-signup-app
+  template:
+    metadata:
+      labels:
+        app: ms-signup-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-signup-app
+        image: djtoler/qz-ms-signup:latest
+        ports:
+        - containerPort: 8015

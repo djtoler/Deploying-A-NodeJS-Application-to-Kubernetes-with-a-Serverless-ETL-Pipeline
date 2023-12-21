@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-addAttempt
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-addAttempt-app
+  template:
+    metadata:
+      labels:
+        app: ms-addAttempt-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-addAttempt-app
+        image: djtoler/qz-ms-addAttempt:latest
+        ports:
+        - containerPort: 8001

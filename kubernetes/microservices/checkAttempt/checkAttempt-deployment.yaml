@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-checkAttempt
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-checkAttempt-app
+  template:
+    metadata:
+      labels:
+        app: ms-checkAttempt-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-checkAttempt-app
+        image: djtoler/qz-ms-checkAttempt:latest
+        ports:
+        - containerPort: 8004
