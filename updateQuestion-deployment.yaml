@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-updateQuestion
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-updateQuestion-app
+  template:
+    metadata:
+      labels:
+        app: ms-updateQuestion-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-updateQuestion-app
+        image: djtoler/qz-ms-updateQuestion:latest
+        ports:
+        - containerPort: 8016
