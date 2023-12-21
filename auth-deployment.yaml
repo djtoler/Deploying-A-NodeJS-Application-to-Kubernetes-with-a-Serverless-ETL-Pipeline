@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-auth
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-auth-app
+  template:
+    metadata:
+      labels:
+        app: ms-auth-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-auth-app
+        image: djtoler/qz-ms-auth:latest
+        ports:
+        - containerPort: 8003
