@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-logout
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-logout-app
+  template:
+    metadata:
+      labels:
+        app: ms-logout-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-logout-app
+        image: djtoler/qz-ms-logout:latest
+        ports:
+        - containerPort: 8013
