@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-login
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-login-app
+  template:
+    metadata:
+      labels:
+        app: ms-login-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-login-app
+        image: djtoler/qz-ms-login:latest
+        ports:
+        - containerPort: 8012
