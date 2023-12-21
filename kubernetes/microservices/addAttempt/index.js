@@ -51,4 +51,4 @@ app.use(express.static(path.join(__dirname + "/public")));
 
 app.use("/", Routes);
 
-app.listen(PORT, () => console.log(`MS-auth is running on port 8001`));
+app.listen(PORT, () => console.log(`MS-auth is running on poort 8001`));
