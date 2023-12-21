@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-getResults
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-getResults-app
+  template:
+    metadata:
+      labels:
+        app: ms-getResults-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-getResults-app
+        image: djtoler/qz-ms-getResults:latest
+        ports:
+        - containerPort: 8011
