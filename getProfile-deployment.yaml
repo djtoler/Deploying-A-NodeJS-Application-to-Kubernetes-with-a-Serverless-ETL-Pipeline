@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-getProfile
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-getProfile-app
+  template:
+    metadata:
+      labels:
+        app: ms-getProfile-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-getProfile-app
+        image: djtoler/qz-ms-getProfile:latest
+        ports:
+        - containerPort: 8008
