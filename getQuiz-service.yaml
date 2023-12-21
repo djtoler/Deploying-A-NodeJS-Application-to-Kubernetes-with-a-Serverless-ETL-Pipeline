@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-getQuiz-service
+spec:
+  type: ClusterIP
+  selector:
+    app: ms-getQuiz-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8010

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-getQuiz
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ms-getQuiz-app
+  template:
+    metadata:
+      labels:
+        app: ms-getQuiz-app
+    spec:
+      nodeSelector:
+        role: backend
+      containers:
+      - name: ms-getQuiz-app
+        image: djtoler/qz-ms-getQuiz:latest
+        ports:
+        - containerPort: 8010
