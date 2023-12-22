@@ -7,7 +7,7 @@ console.log("inside api")
 
 export const addUser = async (data) => {
   try {
-    return await axios.post(`/signup`, data);
+    return await axios.post(process.env.REACT_APP_SIGNUP_URL, data);
   } catch (error) {
     console.log("Error in adding user", error);
   }
@@ -15,7 +15,7 @@ export const addUser = async (data) => {
 
 export const loginUser = async (data) => {
   try {
-    return await axios.post(`/login`, data);
+    return await axios.post(process.env.REACT_APP_LOGIN_URL, data);
   } catch (error) {
     console.log("Error in logging in ", error);
   }
@@ -23,7 +23,7 @@ export const loginUser = async (data) => {
 
 export const logOutUser = () => {
   try {
-    return axios.get(`/logout`);
+    return axios.get(process.env.REACT_APP_LOGOUT_URL);
   } catch (error) {
     console.log("Error in logging out", error);
   }
@@ -31,7 +31,7 @@ export const logOutUser = () => {
 
 export const addQuestion = async (data) => {
   try {
-    return await axios.post(`/addQuestion`, data);
+    return await axios.post(process.env.REACT_APP_ADDQUESTION_URL, data);
   } catch (error) {
     console.log("Error in adding question", error);
   }
@@ -39,7 +39,7 @@ export const addQuestion = async (data) => {
 
 export const updateQuestion = async (data) => {
   try {
-    return await axios.post(`/updateQuestion`, data);
+    return await axios.post(process.env.REACT_APP_UPDATEQUESTION_URL, data);
   } catch (error) {
     console.log("Error in updating question", error);
   }
@@ -47,7 +47,7 @@ export const updateQuestion = async (data) => {
 
 export const getQuestions = () => {
   try {
-    return axios.get(`/getQuestions`);
+    return axios.get(process.env.REACT_APP_GETQUESTIONS_URL);
   } catch (error) {
     console.log("Error in getting questions", error);
   }
@@ -63,7 +63,7 @@ export const createQuiz = async (data) => {
 
 export const getQuiz = () => {
   try {
-    return axios.get(`/getQuiz`);
+    return axios.get(process.env.REACT_APP_CREATEQUIZ_URL);
   } catch (error) {
     console.log("Error in getting quiz", error);
   }
@@ -71,7 +71,7 @@ export const getQuiz = () => {
 
 export const getPlayQuiz = async (data) => {
   try {
-    return await axios.post(`/getPlayQuiz`, data);
+    return await axios.post(process.env.REACT_APP_GETPLAYQUIZ_UR, data);
   } catch (error) {
     console.log("Error in getting quiz", error);
   }
@@ -79,7 +79,7 @@ export const getPlayQuiz = async (data) => {
 
 export const checkAttempt = (data) => {
   try {
-    return axios.post(`/checkAttempt`, data);
+    return axios.post(process.env.REACT_APP_CHECKATTEMPT_URL, data);
   } catch (error) {
     console.log("Error in checking attempt", error);
   }
@@ -87,7 +87,7 @@ export const checkAttempt = (data) => {
 
 export const addAttempt = (data) => {
   try {
-    return axios.post(`/addAttempt`, data);
+    return axios.post(process.env.REACT_APP_ADDATTEMPT_URL, data);
   } catch (error) {
     console.log("Error in adding Attempt", error);
   }
@@ -95,7 +95,7 @@ export const addAttempt = (data) => {
 
 export const getResults = (data) => {
   try {
-    return axios.post(`${URL}/getResults`, data);
+    return axios.post(process.env.REACT_APP_GETRESULTS_URL, data);
   } catch (error) {
     console.log("Error in getting results", error);
   }
@@ -103,7 +103,7 @@ export const getResults = (data) => {
 
 export const getProfile = () => {
   try {
-    return axios.get(`${URL}/getProfile`);
+    return axios.get(process.env.REACT_APP_GETPROFILE_URL);
   } catch (error) {
     console.log("Error in getting profile", error);
   }
@@ -111,7 +111,7 @@ export const getProfile = () => {
 
 export const getAttemptQuizes = () => {
   try {
-    return axios.get(`/getAttemptQuizes`);
+    return axios.get(process.env.REACT_APP_GETATTEMPTQUIZES_URL);
   } catch (error) {
     console.log("Error in getting attempted quizes", error);
   }
