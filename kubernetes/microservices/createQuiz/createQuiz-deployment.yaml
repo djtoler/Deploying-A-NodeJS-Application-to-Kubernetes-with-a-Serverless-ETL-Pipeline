@@ -19,3 +19,8 @@ spec:
         image: djtoler/qz-ms-createQuiz:latest
         ports:
         - containerPort: 8005
+      tolerations:
+      - key: "savePods"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
