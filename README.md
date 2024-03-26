@@ -1,5 +1,18 @@
 <img src="https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0001.jpg">
 
+## Table of Contents
+- [Roles & Responsibilities](#roles--responsibilities)
+- [Purpose](#purpose)
+- [Project Steps](#project-steps)
+  - [1. Cloning and testing the original app](#1-cloning-and-testing-the-original-app)
+  - [2. Containerizing the application](#2-containerizing-the-application)
+  - [3. Building fault tolerance from the application level to the infrastructure level](#3-building-fault-tolerance-from-the-application-level-to-the-infrastructure-level)
+  - [4. Building CICD pipeline, pushing code to GitHub and images to DockerHub](#4-building-cicd-pipeline-pushing-code-to-github-and-images-to-dockerhub)
+  - [5. Load Testing the application with Apache JMeter](#5-load-testing-the-application-with-apache-jmeter)
+  - [6. Building an ETL pipeline for extra credit](#6-building-an-etl-pipeline-for-extra-credit)
+  - [7. Infrastructure Diagram](#7-infrastructure-diagram)
+
+
 ## Roles & Responsibilities
 #### Dwayne Toler - Lead Architect
 ##### Andrew Mullen - System Admin
