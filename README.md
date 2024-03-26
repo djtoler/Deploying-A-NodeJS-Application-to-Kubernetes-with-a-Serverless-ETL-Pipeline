@@ -1,5 +1,4 @@
 ![Page 01](https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0001.jpg)
-![Page 02](https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0002.jpg)
 ![Page 03](https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0003.jpg)
 ![Page 04](https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0004.jpg)
 ![Page 05](https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0005.jpg)
