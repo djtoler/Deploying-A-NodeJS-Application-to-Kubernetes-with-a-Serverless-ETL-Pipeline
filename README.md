@@ -1,4 +1,4 @@
-![Page 01](https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0001.jpg width="400" height="300")
+<img src="https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0001.jpg width="400" height="300">
 
 ## Roles & Responsibilities
 #### Dwayne Toler - Lead Architect
