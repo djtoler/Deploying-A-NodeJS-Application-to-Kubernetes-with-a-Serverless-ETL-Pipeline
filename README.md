@@ -1,4 +1,16 @@
 ![Page 01](https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0001.jpg)
+
+### Roles & Responsibilities
+#### Dwayne Toler - Lead Architect
+##### Andrew Mullen - System Admin
+##### - Nalani Daniels - Project Manager
+##### - Khalil Elkharbibi - Co-Director
+
+### Purpose
+#### Final Project for Kura Labs. Containerizing and deploying a NodeJS Quiz application to Kubernetes and building a ETL pipeline. We chose this particular application as a way to help students learn DevOps concepts via quiz questions.
+
+
+### Project Steps
 ![Page 03](https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0003.jpg)
 ![Page 04](https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0004.jpg)
 ![Page 05](https://github.com/djtoler/Deploying-A-NodeJS-Application-to-Kubernetes-with-a-Serverless-ETL-Pipeline/raw/main/presentation/Final%20Project%20Presentation-2_page-0005.jpg)
